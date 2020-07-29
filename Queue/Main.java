@@ -14,7 +14,9 @@ public class Main {
         queue.remove();
         queue.insert(6);
 
+
         System.out.println(queue.peekFront());
+
         //System.out.println(queue.());
 
         queue.view();
