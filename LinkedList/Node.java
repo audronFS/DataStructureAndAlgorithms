@@ -5,6 +5,6 @@ public class Node {
     public Node next = null;
 
     public void displayNode(){
-        System.out.println("{"+data+"}");
+        System.out.print("{"+data+"} ");
     }
 }
