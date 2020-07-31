@@ -2,7 +2,10 @@ package Algorithms.BinarySearch;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        System.out.println(binarySearch(new int[]{1,2,3,4,5,6,7,8,9,10}, 7));
+        //System.out.println(binarySearch(new int[]{1,2,3,4,5,6,7,8,9,10}, 7));
+        int arr[]=new int[]{1,2,3,4,5,6,7,8,9,10};
+        int last = arr.length-1;
+        System.out.println(recursiveBinarySearch(arr, 6, 0, last));
     }
     public static int binarySearch(int[] arr, int value){
         int first = 0;
@@ -17,5 +20,14 @@ public class BinarySearch {
                 last = middle-1;
         }
         return -1;
+    }
+    public static  int recursiveBinarySearch(int[] arr, int value, int first, int last){
+        if(first>last) return -1;
+        int middle = (first+last)/2;
+            if (arr[middle] > value)
+               return recursiveBinarySearch(arr, value, first, middle - 1);
+            else if (arr[middle] < value)
+                return recursiveBinarySearch(arr, value, middle + 1, last);
+        return middle;
     }
 }
