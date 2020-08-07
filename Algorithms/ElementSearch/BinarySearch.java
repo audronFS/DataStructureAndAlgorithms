@@ -1,11 +1,11 @@
-package Algorithms.BinarySearch;
-
+package Algorithms.ElementSearch;
+//O(log(n))
 public class BinarySearch {
     public static void main(String[] args) {
         //System.out.println(binarySearch(new int[]{1,2,3,4,5,6,7,8,9,10}, 7));
         int arr[]=new int[]{1,2,3,4,5,6,7,8,9,10};
         int last = arr.length-1;
-        System.out.println(recursiveBinarySearch(arr, 6, 0, last));
+        System.out.println(recursiveBinarySearch(arr, 12, 0, last));
     }
     public static int binarySearch(int[] arr, int value){
         int first = 0;
@@ -22,6 +22,7 @@ public class BinarySearch {
         return -1;
     }
     public static  int recursiveBinarySearch(int[] arr, int value, int first, int last){
+        System.out.println("["+first+"..."+last+"]");
         if(first>last) return -1;
         int middle = (first+last)/2;
             if (arr[middle] > value)
